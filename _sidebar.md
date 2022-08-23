@@ -9,4 +9,3 @@
   - [Crontab定时任务](Linux/crontab定时任务.md)
   - [Shell环境配置](Linux/shell环境配置.md)
 
-- [Index](index.md)
