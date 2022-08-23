@@ -1,14 +1,13 @@
 <!-- _coverpage.md -->
 
-![logo](assets/100.png)
+![logo](assets/avatar.jpg)
 
-## docsify <small>3.5</small>
+## Domi•cat' NoteBook📗
 
-> 一个神奇的文档网站生成器。
+> 人生总在不断的记录中。
 
-- 简单、轻便 (压缩后 ~21kB)
-- 无需生成 html 文件
-- 众多主题
+- 写一点
+- 再写一点
 
 [GitHub](https://github.com/domixcat/xnotes/)
 [开始阅读](#我的笔记本)

@@ -1,4 +1,3 @@
-
 - Git
   - [Git合并指定Commit](Git/Git合并指定commit.md)
 
@@ -8,4 +7,3 @@
   - [Cat和EOF的配合使用](Linux/cat和EOF的配合使用.md)
   - [Crontab定时任务](Linux/crontab定时任务.md)
   - [Shell环境配置](Linux/shell环境配置.md)
-
