@@ -23,3 +23,17 @@ git push origin master
 
 ## TortoiseGit 操作
 
+1. 切到要合并的分支(master)
+2. 右键菜单，选择【显示日志】
+
+    ![显示日志](../images/20220823-01-Git-TortoiseGit.png)
+
+3. 切到commit所在的分支(beta)，并提取commit
+
+    ![提取commit](../images/20220823-02-Git-TortoiseGit.png)
+
+4. 在弹出的对话框中，点击【继续】
+
+    ![完成合并](../images/20220823-03-Git-TortoiseGit.png)
+
+5. 点击【完成】后，推送即可
