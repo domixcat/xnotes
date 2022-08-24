@@ -43,5 +43,15 @@ git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(ye
 
 ## 指定合并规则
 
+从 A 分支合并到 B 分支时，想要某些文件不要合并，Git 也是可以做到的。
 
-`git config merge.ours.driver true`
+首先，在仓库根目录创建 `.gitattributes` 文件，在该文件中列出合并文件过滤规则，例如：
+```
+server/src/config/** merge=ours
+server/version.txt merge=ours
+.gitignore merge=ours
+.gitattributes merge=ours
+```
+上面的每一行都指定了文件的合并规则，`merge=ours`表示合并时使用我的，不合并对方分支的内容。
+
+然后，在该 **仓库根目录** 执行命令：`git config merge.ours.driver true`（可以在根目录的 `.git` 目录查看本仓库的配置文件 `config`）。
