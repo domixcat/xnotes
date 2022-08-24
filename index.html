@@ -299,10 +299,13 @@
     window.$docsify = {
       loadSidebar: true,
       autoHeader: true,
-      loadNavbar: false,
+      loadNavbar: true,
+      mergeNavbar: true,
       coverpage: true,
+      onlyCover: true,
       alias: {
-        '/.*/_sidebar.md': '/_sidebar.md'
+        '/.*/_sidebar.md': '/_sidebar.md',
+        '/.*/_navbar.md': '/_navbar.md'
       },
       name: "<p>🌈 Domi•cat' NoteBook</p>",
       repo: '',
@@ -325,7 +328,7 @@
         function (hook) {
           var footer = [
             '<hr>',
-            '<footer style="text-align: center;margin-top: 30px;padding-bottom: 30px;">',
+            '<footer style="text-align: center;margin-top: 30px;padding-bottom: 0px;">',
             '<span> Made with <svg xmlns="http://www.w3.org/2000/svg" width="24" height="15" viewBox="0 0 24 24" fill="red" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg> by <a href="https://www.github.com/domixcat" target="_blank">domixcat</a>  &copy; 2022 </span>',
             '</footer>'
           ].join('');
@@ -344,6 +347,10 @@
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
   <script src="//unpkg.com/docsify-plugin-toc@1.3.1/dist/docsify-plugin-toc.min.js"></script>
   <!--script src="//unpkg.com/docsify-toc@1.0.0/dist/toc.js"></script-->
+
+  <!--代码高亮-->
+  <script src="https://notebook.js.org/plugin/prism-c.js"></script>
+  <script src="https://notebook.js.org/plugin/prism-bash.min.js"></script>
 </body>
 
 </html>

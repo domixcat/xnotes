@@ -10,6 +10,6 @@
 - 再写一点
 
 [GitHub](https://github.com/domixcat/xnotes/)
-[开始阅读](#我的笔记本)
+[开始阅读](/README.md)
 
-![color](#f0f0f0)
+![color](#ffffff)

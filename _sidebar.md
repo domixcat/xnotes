@@ -1,5 +1,7 @@
 - Git
   - [Git合并指定Commit](Git/Git合并指定commit.md)
+  - [Git还原与回退](Git/Git还原与回退.md)
+  - [Git相关配置](Git/Git相关配置.md)
 
 - Linux
   - [Linux修改打开文件数量](Linux/Linux修改打开文件数量.md)
