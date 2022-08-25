@@ -16,5 +16,8 @@
 - 编辑器
   - [Vim字符串替换](编辑器/Vim字符串替换.md)
 
+- C&C++
+  - [string头文件的区别](C&C++/string头文件的区别.md)
+
 - Lua
   - [实用的Lua库](Lua/实用的Lua库.md)
