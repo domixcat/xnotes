@@ -4,11 +4,17 @@
   - [Git相关配置](Git/Git相关配置.md)
 
 - Linux
+  - [Linux命令备忘](Linux/Linux命令备忘.md)
   - [Linux修改打开文件数量](Linux/Linux修改打开文件数量.md)
   - [Nginx配置注意点](Linux/Nginx配置注意点.md)
   - [Cat和EOF的配合使用](Linux/cat和EOF的配合使用.md)
   - [Crontab定时任务](Linux/crontab定时任务.md)
   - [Shell环境配置](Linux/shell环境配置.md)
+  - [一个测试24位真彩色的脚本](Linux/一个测试24位真彩色的脚本.md)
+  - [Man手册关键字高亮](Linux/Man手册关键字高亮.md)
 
 - 编辑器
   - [Vim字符串替换](编辑器/Vim字符串替换.md)
+
+- Lua
+  - [实用的Lua库](Lua/实用的Lua库.md)
