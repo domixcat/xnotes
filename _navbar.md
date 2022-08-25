@@ -19,5 +19,6 @@
 
 - 📦资源网站
     - [异次元](https://www.iplaysoft.com/)
+    - [微软插件市场](https://marketplace.visualstudio.com/)
 
 - [Github](https://github.com/domixcat/xnotes)
