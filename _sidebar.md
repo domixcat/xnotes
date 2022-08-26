@@ -7,6 +7,8 @@
   - [Shell环境配置](Linux/shell环境配置.md)
   - [一个测试24位真彩色的脚本](Linux/一个测试24位真彩色的脚本.md)
   - [Man手册关键字高亮](Linux/Man手册关键字高亮.md)
+  - [SSH配置与命令](Linux/SSH配置与命令.md)
+  - [Linux命令单横线和双横线的区别](Linux/Linux命令单横线和双横线的区别.md)
 
 - Git
   - [Git合并指定Commit](Git/Git合并指定commit.md)
