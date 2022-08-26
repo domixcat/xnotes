@@ -9,6 +9,7 @@
   - [Man手册关键字高亮](Linux/Man手册关键字高亮.md)
   - [SSH配置与命令](Linux/SSH配置与命令.md)
   - [Linux命令单横线和双横线的区别](Linux/Linux命令单横线和双横线的区别.md)
+  - [Linux修改时区](Linux/Linux修改时区.md)
 
 - Git
   - [Git合并指定Commit](Git/Git合并指定commit.md)
