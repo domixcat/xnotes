@@ -25,7 +25,7 @@ sudo apt install fish
 ## 安装oh my fish
 安装步骤参考[官方github](https://github.com/oh-my-fish/oh-my-fish)。
 
-下载安装完毕后，可以选择一个主题，例如：`omf theme bobthefish`，我个人比较喜欢该主题，该主题需要字体支持，推荐[Caskaydia Cove NF](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/CascadiaCode/Light/complete/Caskaydia%20Cove%20Light%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.otf) 字体。
+下载安装完毕后，可以选择一个主题，例如：`omf theme bobthefish`，我个人比较喜欢该主题，该主题需要字体支持，推荐[Caskaydia Cove NF](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CascadiaCode/Light/complete) 字体。
 
 ## 配置 fish
 - 支持bash的`sudo !!`
