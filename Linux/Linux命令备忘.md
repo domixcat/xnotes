@@ -79,3 +79,45 @@ awk 'BEGIN{ORS=","}{print $1}' test.txt | sed 's/,$//'
     555-666
      
     ```
+
+## 截断grep返回的长匹配行
+当使用grep 返回的匹配行过长，影响关键数据的查询，可以对匹配行进行截断，有两种方法：
+- 方法一，使用 `-E` 参数，配合 `-o`参数。
+```
+#表示截取匹配到的行的关键词 BattleReport 前后10个字符，而不显示整行
+grep -oE '.{0,10}BattleReport.{10}' xxx.log
+```
+截取方式入下图（图片引用字 stackoverflow）：
+![grep truncate](../images/20220909-01-greptruncate.png)
+
+- 方法二，使用 `-P` 参数，即使用 perl 正则匹配，配合 `-o` 来达到截取效果。
+```
+grep -oP '.*(?=BattleReport)' xxx.log
+```
+
+perl 的四种表达式：
+- `(?=...)`：表示从左向右的顺序环视。例如(?=\d)表示当前字符的右边是一个数字时就满足条件
+- `(?!...)`：表示顺序环视的取反。如(?!\d)表示当前字符的右边不是一个数字时就满足条件
+- `(?<=...)`：表示从右向左的逆序环视。例如(?<=\d)表示当前字符的左边是一个数字时就满足条件
+- `(?<!...)`：表示逆序环视的取反。如(?<!\d)表示当前字符的左边不是一个数字时就满足条件
+
+示例文件 test.log 内容如下：
+```
+email1=aaa@163.com
+email2=bbb@qq.com
+```
+
+匹配输出结果：
+```
+grep -oP '.*(?=@163\.com)' test.log
+# 输出：email1=aaa
+
+grep -oP '(?=aaa).*' test.log
+# 输出：aaa@163.com
+
+grep -oP '.*(?<=aaa)' test.log
+# 输出：email1=aaa
+```
+
+参考：
+[How to truncate long matching lines returned by grep or ack](https://stackoverflow.com/questions/2034799/how-to-truncate-long-matching-lines-returned-by-grep-or-ack)、[grep 与 perl 正则 AWK](https://www.jianshu.com/p/dd5b97f9385a)、[linux grep命令的-P和-o选项的作用](https://www.cnblogs.com/onelikeone/p/16415452.html)

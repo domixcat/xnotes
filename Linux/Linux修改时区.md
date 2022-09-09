@@ -26,3 +26,12 @@ export TZ='Asia/Shanghai'
 ```
 sudo timedatectl set-timezone 'Asia/Shanghai'
 ```
+
+## 检查是否为夏令时
+可以借助 lua，运行以下 lua 代码：
+```lua
+print(os.date("*t").isdst) -- 输出true 表示为夏令时
+```
+
+## 时区列表
+维基百科[时区列表](https://zh.wikipedia.org/zh-cn/%E6%97%B6%E5%8C%BA%E5%88%97%E8%A1%A8)列出了列举世界各国和地区的法定时区，带`*`表示该地区启用了夏令时。
