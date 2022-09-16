@@ -13,6 +13,9 @@
   - [12 - Samba设置注意点](Linux/Samba设置注意点.md)
   - [13 - Filebeat相关问题](Linux/Filebeat相关问题.md)
 
+- WSL
+  - [01 - WSL2疑难杂症](WSL/WSL2疑难杂症.md)
+
 - Git
   - [01 - Git合并指定Commit](Git/Git合并指定commit.md)
   - [02 - Git还原与回退](Git/Git还原与回退.md)
