@@ -133,3 +133,8 @@ grep -oP '.*(?<=aaa)' test.log
 即在 /etc/ssl/openssl.cnf 配置文件后追加 SubjectAltName 选项内容，然后将进程替换后的特殊文件传递给 -config 参数。
 
 推荐[Named pipes, process substitution and tee](https://kaushikghose.wordpress.com/2016/10/27/named-pipes-process-substitution-and-tee/)这篇博文，它介绍了如何使用命名管道、进程替换以及与 tee 的结合使用。
+
+需要注意的是，若是在 shell 脚本文件中使用了进程替换，使用 `sh xxx.sh` 会报语法错误，即使在脚本文件定义了 `#!/bin/bash`。
+原因是在以 `sh xxx.sh` 的方式执行脚本时，系统使用的 POSIX 的 shell。正确的运行方式有以下两种：
+- 指定使用 bash 来运行，如：`bash xxx.sh`
+- 在脚本文件指定 bash 运行（即文件第一行为`#!/bin/bash`），并给脚本赋予可执行权限，然后 `./xxx.sh` 来运行脚本
