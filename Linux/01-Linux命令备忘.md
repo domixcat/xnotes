@@ -121,3 +121,13 @@ grep -oP '.*(?<=aaa)' test.log
 
 参考：
 [How to truncate long matching lines returned by grep or ack](https://stackoverflow.com/questions/2034799/how-to-truncate-long-matching-lines-returned-by-grep-or-ack)、[grep 与 perl 正则 AWK](https://www.jianshu.com/p/dd5b97f9385a)、[linux grep命令的-P和-o选项的作用](https://www.cnblogs.com/onelikeone/p/16415452.html)
+
+## bash中的<()语法
+`<(list)` 是 bash、zsh、ksh的特性，称之为“进程替换”。参考官网文档[Process Substitution](https://www.gnu.org/software/bash/manual/bash.html#Process-Substitution)。可以想象括号内的命令最终会返回一个特殊的文件，有点类似 mkfifo 创建的命名管道。
+
+一个[使用场景](Skynet/01-Skynet开启ssl.md#自签名证书)，在 openssl 生成证书时，因为一些原因需要对默认的配置进行一些扩展，但是又不想再创建一个配置文件。
+此时，就可以使用进程替换，例如：
+```
+-config <(cat /etc/ssl/openssl.cnf <(printf '[SAN]\nsubjectAltName=DNS.1:www.xxx.com,DNS.2:*.xxx.com,IP.1:192.168.1.101'))
+```
+即在 /etc/ssl/openssl.cnf 配置文件后追加 SubjectAltName 选项内容，然后将进程替换后的特殊文件传递给 -config 参数。
