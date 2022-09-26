@@ -131,3 +131,5 @@ grep -oP '.*(?<=aaa)' test.log
 -config <(cat /etc/ssl/openssl.cnf <(printf '[SAN]\nsubjectAltName=DNS.1:www.xxx.com,DNS.2:*.xxx.com,IP.1:192.168.1.101'))
 ```
 即在 /etc/ssl/openssl.cnf 配置文件后追加 SubjectAltName 选项内容，然后将进程替换后的特殊文件传递给 -config 参数。
+
+推荐[Named pipes, process substitution and tee](https://kaushikghose.wordpress.com/2016/10/27/named-pipes-process-substitution-and-tee/)这篇博文，它介绍了如何使用命名管道、进程替换以及与 tee 的结合使用。
