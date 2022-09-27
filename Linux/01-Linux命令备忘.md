@@ -138,3 +138,15 @@ grep -oP '.*(?<=aaa)' test.log
 原因是在以 `sh xxx.sh` 的方式执行脚本时，系统使用的 POSIX 的 shell。正确的运行方式有以下两种：
 - 指定使用 bash 来运行，如：`bash xxx.sh`
 - 在脚本文件指定 bash 运行（即文件第一行为`#!/bin/bash`），并给脚本赋予可执行权限，然后 `./xxx.sh` 来运行脚本
+
+
+## 查看CPU信息
+通过 `cat /proc/cpuinfo` 可以查看机器的CPU相关信息，包括：物理CPU个数、每个物理CPU的核心数、逻辑CPU数量。它们之间的关系如下图所示：
+![cpu](../images/linux-01-01.png)
+
+以下列出一些常用命令：
+- 查看物理CPU个数：`cat /proc/cpuinfo |grep "physical id" |sort |uniq |wc -l`
+- 查看每个物理CPU的核数：`cat /proc/cpuinfo| grep "cpu cores"| uniq`
+- 查看逻辑CPU数：`cat /proc/cpuinfo| grep "processor"| wc -l`
+- 查看CPU型号：`cat /proc/cpuinfo | grep name| cut -d: -f2|uniq`
+>由于现代的CPU普遍都使用了超线程技术，因此在一个物理核心上可以有多个逻辑线程，比如：4核心8线程。

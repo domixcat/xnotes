@@ -13,6 +13,9 @@
   - [12 - Samba设置注意点](Linux/12-Samba设置注意点.md)
   - [13 - Filebeat相关问题](Linux/13-Filebeat相关问题.md)
 
+- Windows
+  - [01 - 批处理备忘](Windows/01-批处理备忘.md)
+
 - WSL
   - [01 - WSL2疑难杂症](WSL/01-WSL2疑难杂症.md)
 
