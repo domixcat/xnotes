@@ -150,3 +150,22 @@ grep -oP '.*(?<=aaa)' test.log
 - 查看逻辑CPU数：`cat /proc/cpuinfo| grep "processor"| wc -l`
 - 查看CPU型号：`cat /proc/cpuinfo | grep name| cut -d: -f2|uniq`
 >由于现代的CPU普遍都使用了超线程技术，因此在一个物理核心上可以有多个逻辑线程，比如：4核心8线程。
+
+## Centos yum源配置
+1. 进入yum源配置文件存放目录，编辑源配置文件
+```
+cd /etc/yum.repos.d/
+vim xxx.repo
+```
+2. 删除原有的数据缓存
+```
+yum clean all
+```
+3. 重建数据缓存
+```
+yum makecache
+```
+4. 查看源列表
+```
+yum repolist
+```

@@ -52,3 +52,22 @@ openssl req \
 生成的自签名证书需要导入到系统才能使用，在 windows 系统下导入步骤如下：
 1. 按下 win+r 组合键，输入 `certmgr.msc`，右键选中【受信任的根证书颁发机构】->【所有任务】->【导入】
 2. 安装引导步骤，选择生成的证书（注意不要选到私钥文件了），一路点击确认即可导入。
+
+## openssl库兼容问题
+不同版本的 linux 系统安装的 openssl 的版本也不一样，例如 Ubuntu22.04 安装的是 3.0.2 版本的 openssl，Centos8.5 安装的是 1.1.1 版本。
+
+查看 openssl 版本命令如下：
+```
+openssl version
+或者
+openssl version -a
+```
+
+若想查看动态库所对应的版本，可以通过以下方式：
+```
+strings libssl.so |grep -i "^openssl"
+strings libcrypto.so |grep -i "^openssl"
+```
+在输出内容中可以找到版本号，例如：`OpenSSL 3.0.2 15 Mar 2022`。
+
+另外，在 Centos 上，若出现`libcrypto.so.10 no found`或`libssl.so.10 no found`，说明程序链接的是 1.0 版本的 openssl 库，可以`yum install compat-openssl10 -y` 来解决。
