@@ -7,7 +7,7 @@
 echo "123" | cat - > 1.txt
 echo "456" | cat - >> 1.txt
 
-# 输出文件1.txt 的函数
+# 输出文件1.txt 的行数
 cat -n 1.txt
 
 # 在 -n 前加入 --，会报：cat: -n: No such file or directory 的错误
