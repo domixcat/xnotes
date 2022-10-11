@@ -12,6 +12,7 @@
   - [11 - Linux修改时区](Linux/11-Linux修改时区.md)
   - [12 - Samba设置注意点](Linux/12-Samba设置注意点.md)
   - [13 - Filebeat相关问题](Linux/13-Filebeat相关问题.md)
+  - [14 - npm包管理](Linux/14-npm包管理.md)
 
 - Windows
   - [01 - 批处理备忘](Windows/01-批处理备忘.md)

@@ -152,20 +152,25 @@ grep -oP '.*(?<=aaa)' test.log
 >由于现代的CPU普遍都使用了超线程技术，因此在一个物理核心上可以有多个逻辑线程，比如：4核心8线程。
 
 ## Centos yum源配置
-1. 进入yum源配置文件存放目录，编辑源配置文件
 ```
+1. 进入yum源配置文件存放目录，编辑源配置文件
 cd /etc/yum.repos.d/
 vim xxx.repo
-```
+
 2. 删除原有的数据缓存
-```
 yum clean all
-```
+
 3. 重建数据缓存
-```
 yum makecache
-```
+
 4. 查看源列表
-```
 yum repolist
+
+5. 查看已安装的包
+yum list installed
 ```
+若centos支持dnf，上面的命令可以用 dnf 替换 yum，例如：`dnf list installed`
+
+## scp远程拷贝
+- 拷贝单个文件：`scp xxx.zip root@192.168.1.100:/data/`
+- 拷贝文件夹：`scp -r xxx root@192.168.1.100:/data/`
