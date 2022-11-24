@@ -67,7 +67,7 @@ git checkout -- *           // 从索引换到所有文件到工作区
     git push -f -u origin develop // 强制推送到指定的远端分支
     ```
 
-    需要注意的是，hard reset 后只影响了本地仓库 A，其他的本地仓库 B 也同样需要 hard reset，当仓库 B 拉取被重置的远端分支时，并不会合并或rebase任何东西，要特别注意，否则会导致 A 的回退操作被撤销，因为 B 又把 HEAD 推送到远端了。
+    需要注意的是，hard reset 后只影响了本地仓库 A，其他的本地仓库 B 也同样需要 hard reset，当仓库 B 拉取被重置的远端分支时，并不会合并或rebase任何东西，要特别注意，否则会导致 A 的回退操作被撤销，因为 B 又把 HEAD 推送到远端了，因此需要在 B 执行 `git reset --hard origin/master`。
 
 
 ## git diff 命令
