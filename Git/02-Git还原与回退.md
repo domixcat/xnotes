@@ -44,8 +44,11 @@ git checkout -- *           // 从索引换到所有文件到工作区
 **回退**，一般用于撤销提交，使用的是 `git reset` 命令，它能修改 HEAD 指针，另外，可以通过参数来控制修改索引和工作区。其参数如下：
 
 - `mixed`，重置HEAD，重置 index，保留工作区（*默认参数*）
+
     一般用于撤销提交，例如发现提交的部分代码出现错误，可以先回退到上一个版本 ` git reset HEAD^`，编辑后再次提交即可。
+
 - `soft`，重置HEAD，保留 index，保留工作区
+
     一般用来修改 commit 信息，例如提交的消息有错别字想修改正确，可以如下操作：
     ```
     git reset --soft HEAD^
@@ -53,7 +56,9 @@ git checkout -- *           // 从索引换到所有文件到工作区
     ```
 
     当然也可以撤销 git reset soft head操作，先通过git reflog找到上一次的历史提交记录id，然后 `git reset --hard [id]`。
+
 - `hard`，重置HEAD，重置 index，重置工作区
+
     一般用于强制回退版本，且大部分情况都要重置远程仓库。
     ```
     git reset --hard [id]   // 回退到指定commit id
