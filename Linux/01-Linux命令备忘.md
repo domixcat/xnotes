@@ -174,3 +174,24 @@ yum list installed
 ## scp远程拷贝
 - 拷贝单个文件：`scp xxx.zip root@192.168.1.100:/data/`
 - 拷贝文件夹：`scp -r xxx root@192.168.1.100:/data/`
+
+## 在tail中进行grep 多字符串匹配
+使用 grep 对单文件进行多字符串的 AND 匹配时，一般使用类似下面的命令格式：
+```bash
+grep xxx filename.log | grep yyy
+```
+即匹配既存在 xxx 又存在 yyy 的行。
+
+但是这种方式在匹配 `tail -f filename.log` 的输出时会出现问题，只支持一个管道。例如下面格式的命令就不会生效：
+```bash
+tail -f filename.log | grep xxx | grep yyy
+```
+大概的原因是：管道`|`是全缓冲的，一般来说buffer_size为4096，有些是8192。不管具体值多少，只有buffer_size满了，才会看到输出。
+
+可以使用 `-e` 参数来解决问题：
+>-e PATTERNS, --regexp=PATTERNS. Use PATTERNS as the patterns. If this option is used multiple times or is combined with the -f (--file) option, search for all patterns given.  This option can be used to protect a pattern beginning with “-”.
+
+命令格式如下：
+```bash
+tail -f filename.log |grep -e "xxx" -e "yyy"
+```
