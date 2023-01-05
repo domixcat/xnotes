@@ -20,5 +20,6 @@
 - 📦资源网站
     - [异次元](https://www.iplaysoft.com/)
     - [微软插件市场](https://marketplace.visualstudio.com/)
+    - [Nerd Font字体下载](https://www.nerdfonts.com/font-downloads)
 
 - [Github](https://github.com/domixcat/xnotes)
