@@ -16,7 +16,7 @@ sudo apt update
 
 在使用该配置前需要安装好相关依赖，包括：
 - python相关
-```
+```shell
 sudo apt install python3
 sudo ln -s /usr/bin/python3 /usr/bin/python
 
