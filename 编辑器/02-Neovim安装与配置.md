@@ -19,11 +19,10 @@ sudo apt update
 ```shell
 sudo apt install python3
 sudo ln -s /usr/bin/python3 /usr/bin/python
-
-# 检测是否已经安装了 python venv
+#检测是否已经安装了 python venv
 python -m venv "venv"
 sudo apt install python3.10-venv
-
+#pip
 sudo apt install python3-pip
 pip install neovim --user
 pip3 install pynvim
@@ -74,17 +73,20 @@ sudo mv win32yank.exe  /usr/local/bin/
 
 ## 解决报错的方法
 1. 查看 neovim 日志
-neovim 日志路径在 `~/.local/state/nvim`，例如 python venv 未安装时，mason插件日志在 `~/.local/state/nvim/mason.log`。
+
+    neovim 日志路径在 `~/.local/state/nvim`，例如 python venv 未安装时，mason插件日志在 `~/.local/state/nvim/mason.log`。
 
 2. 使用 `:checkhealth` 检查 neovim
 
 3. 打印调试 lua 插件
-若某个插件有报错，可以通过打印的方式对其进行调试，例如：
-```lua
-print("xxxxx")  -- lua 原生打印函数
-vim.pretty_print("xxxx")    -- neovim 打印函数
-print(vim.inspect(vim))     -- inspect 可以格式化table
-vim.notify(vim.inspect({a=1,b=2}),"info")   -- 使用nvim-notify插件弹窗显示信息
-```
-**注意**：若使用打印函数无法看到输出，可以使用命令 `:messages` 开启打印输出。
-另外，也可以直接使用命令执行打印，如：`:lua vim.notify(vim.inspect({a=1,b=2}),"info")`，若弹窗过快，可以使用`:Notifications`显示弹窗历史记录。
+
+    若某个插件有报错，可以通过打印的方式对其进行调试，例如：
+    ```lua
+    print("xxxxx")  -- lua 原生打印函数
+    vim.pretty_print("xxxx")    -- neovim 打印函数
+    print(vim.inspect(vim))     -- inspect 可以格式化table
+    vim.notify(vim.inspect({a=1,b=2}),"info")   -- 使用nvim-notify插件弹窗显示信息
+    ```
+    **注意**：若使用打印函数无法看到输出，可以使用命令 `:messages` 开启打印输出。
+
+    另外，也可以直接使用命令执行打印，如：`:lua vim.notify(vim.inspect({a=1,b=2}),"info")`，若弹窗过快，可以使用`:Notifications`显示弹窗历史记录。
